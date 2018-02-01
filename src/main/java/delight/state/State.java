@@ -12,7 +12,7 @@ public class State {
 	
 	public static StateRegistry get() {
 		if (registry == null) {
-			registry = new StateRegistryImpl();
+			registry = create();
 		}
 		return registry;
 	}
