@@ -1,9 +1,9 @@
 package delight.state;
 
-import delight.json.JSONObject;
+import delight.json.JSON;
 
 public interface StateProvider {
 	
-	public JSONObject get();
+	public JSON get();
 	
 }
