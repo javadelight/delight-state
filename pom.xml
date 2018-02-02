@@ -5,6 +5,7 @@
 	<groupId>org.javadelight</groupId>
 	<artifactId>delight-state</artifactId>
 	<version>0.0.1</version>
+	
 	<description>Simple utility to access application state.</description>
 	<url>https://github.com/javadelight/delight-state</url>
 	<properties>
