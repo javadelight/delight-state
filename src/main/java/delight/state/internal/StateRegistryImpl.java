@@ -1,7 +1,10 @@
 package delight.state.internal;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import delight.state.StateProvider;
 import delight.state.StateRegistry;
@@ -31,10 +34,28 @@ public class StateRegistryImpl implements StateRegistry {
 		}
 	}
 	
+	@Override
+	public List<StateProvider> getProviders(String path) {
+		
+		List<StateProvider> matchingProviders = new ArrayList<StateProvider>(4);
+		synchronized (providers) {
+			
+			for (Entry<String, StateProvider> e: providers.entrySet()) {
+				if (e.getKey().startsWith(path)) {
+					matchingProviders.add(e.getValue());
+				}
+			}
+			
+		}
+		return matchingProviders;
+	}
+	
 	public StateRegistryImpl() {
 		super();
 		this.providers = new HashMap<String, StateProvider>();
 	}
+
+	
 
 	
 	
